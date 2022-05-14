@@ -7,5 +7,9 @@ RSpec.describe User, type: :model do
     it 'creates a User' do
       expect { create }.to change { User.count }.by(1)
     end
+
+    it 'causes a failure' do
+      expect { create }.to change { User.count }.by(100)
+    end
   end
 end
